@@ -584,21 +584,7 @@ end
 
 function ENT:UpdateMass()
 
-	self.Mass = self.Mass
-
-	--reduce superflous engine calls, update crate mass every 5 kgs change or every 10s-15s
-	if math.abs((self.LastMass or 0) - self.Mass) > 5 or ACF.CurTime > self.NextMassUpdate then
-
-		self.LastMass	= self.Mass
-		self.NextMassUpdate = ACF.CurTime + math.Rand(10,15)
-
-		local phys = self:GetPhysicsObject()
-		if (phys:IsValid()) then
-
-			phys:SetMass( self.Mass )
-
-		end
-	end
+	print("hiii")
 
 end
 
