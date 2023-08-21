@@ -584,7 +584,7 @@ end
 
 function ENT:UpdateMass()
 
-	self.Mass = self.EmptyMass + math.Round( self.AmmoMassMax * (self.Ammo / math.max(self.Capacity,1)) )
+	self.Mass = self.Mass
 
 	--reduce superflous engine calls, update crate mass every 5 kgs change or every 10s-15s
 	if math.abs((self.LastMass or 0) - self.Mass) > 5 or ACF.CurTime > self.NextMassUpdate then
